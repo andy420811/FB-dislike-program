@@ -6,7 +6,6 @@ from selenium.webdriver.chrome.options import Options
 import time
 from selenium.webdriver.common.by import By 
 from PyQt5 import QtWidgets
-from sympy import I
 from controller import MainWindow_controller
 import sys
 
@@ -33,11 +32,11 @@ driver = webdriver.Chrome(options = options)  #创建浏览器对象
 driver.get('https://www.facebook.com') #打开网页
 #driver.maximize_window()   #最大化窗口
 context = driver.find_element(By.ID , 'email')
-context.send_keys("andy420811@gmail.com")
+context.send_keys("{email}}")  #need to change
 time.sleep(0.5)     #加载等待
 
 context = driver.find_element(By.ID , 'pass')
-context.send_keys("AaBb95463719")
+context.send_keys("{password}") #need to change
 
 driver.find_element(By.XPATH , "//button[@value='1'][@name='login']").click()
 time.sleep(4)
